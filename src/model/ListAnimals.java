@@ -1,34 +1,40 @@
 package model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="animals")
+@Table(name = "animals")
 public class ListAnimals {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int id;
-	@Column(name="NAME")
+	@Column(name = "NAME")
 	private String name;
-	@Column(name="TYPE")
+	@Column(name = "TYPE")
 	private String type;
-	@Column(name="OWNER")
-	private String owner;
-	
+	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@JoinColumn(name = "OWNER_ID")
+	private ListOwners owner;
+
 	public ListAnimals() {
-	
+
 	}
-	
-	public ListAnimals(String name, String type, String owner) {
+
+	public ListAnimals(String name, String type, ListOwners owner) {
+		this.owner = owner;
 		this.name = name;
 		this.type = type;
-		this.owner = owner;
 	}
 
 	public int getId() {
@@ -55,16 +61,15 @@ public class ListAnimals {
 		this.type = type;
 	}
 
-	public String getOwner() {
+	public ListOwners getOwner() {
 		return owner;
 	}
 
-	public void setOwner(String owner) {
+	public void setOwner(ListOwners owner) {
 		this.owner = owner;
 	}
-	public String returnItemDetails() {
-		return name + " - " + type + " Owner: " + owner;
-	}
-	
 
+	public String toString() {
+		return "Pet: " + name + " : " + type + " Owner:" + owner.getOwnerName();
+	}
 }

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Pet List</title>
-</head>
+	<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="style.css">
+		<title>Add Pet</title>
+	</head>
+
 <body>
-<form action="addItemServlet" method="post">
-Pet Name: <input type="text" name="name">
-Type: <input type="text" name="type">
-Owner: <input type="text" name="owner">
-<input type="submit" value="Add Pet">
-</form><br />
-<a href="viewAllItemsServlet">View the complete pet list</a>
+<h1>Add A Pet</h1>
+<form action = "addAnimalServlet" method="post"> 
+
+Pet Name: <br />
+<input type = "text" name = "name"> <br />
+Pet Type: <br />
+<input type ="text" name = "type"> <br />
+Owner Name: <br />
+<input type ="text" name = "owner"> <br />
+
+
+<input type = "submit" value="Add Pet" class="button"> 
+</form> <br /> 
+<a href = "viewAllAnimalsServlet">Go to Pet List</a><br />
+<a href = "viewAllOwnersServlet">Go to Owner List</a><br />
 </body>
 </html>

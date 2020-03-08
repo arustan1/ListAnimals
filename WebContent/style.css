@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #222222;
+	color: #FFFFFF;
+	font-family: "open sans";
+	text-align: center;
+}
+
+h1 {
+	color: #78bc24;
+}
+
+p.accent {
+	color: #78bc24;
+	font-style: italic;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+a:link {
+	color: #78bc24;
+}
+
+a:visited {
+	color: #248fbc;
+}
+
+input[type=text] {
+	border: 2px solid #78bc24;
+	border-radius: 2px;
+	padding: 5px 5px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: #333333;
+}
+
+.button {
+	background-color: #248fbc;
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+}
+
+.button:hover {
+	background-color: #78bc24;
+	color: white;
+}
